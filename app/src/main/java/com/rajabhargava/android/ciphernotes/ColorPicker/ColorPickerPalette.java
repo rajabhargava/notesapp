@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import com.moonpi.swiftnotes.R;
+import com.rajabhargava.android.ciphernotes.R;
 
-import static com.moonpi.swiftnotes.ColorPicker.ColorPickerSwatch.*;
+import static com.rajabhargava.android.ciphernotes.ColorPicker.ColorPickerSwatch.*;
 
 
 /**

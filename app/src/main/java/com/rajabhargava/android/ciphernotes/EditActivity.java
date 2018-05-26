@@ -23,7 +23,7 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.moonpi.swiftnotes.ColorPicker.ColorPickerDialog;
+import com.rajabhargava.android.ciphernotes.ColorPicker.ColorPickerDialog;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -36,14 +36,14 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.ShortBufferException;
 import javax.crypto.spec.SecretKeySpec;
 
-import static com.moonpi.swiftnotes.ColorPicker.ColorPickerSwatch.OnColorSelectedListener;
-import static com.moonpi.swiftnotes.DataUtils.NEW_NOTE_REQUEST;
-import static com.moonpi.swiftnotes.DataUtils.NOTE_BODY;
-import static com.moonpi.swiftnotes.DataUtils.NOTE_COLOUR;
-import static com.moonpi.swiftnotes.DataUtils.NOTE_FONT_SIZE;
-import static com.moonpi.swiftnotes.DataUtils.NOTE_HIDE_BODY;
-import static com.moonpi.swiftnotes.DataUtils.NOTE_REQUEST_CODE;
-import static com.moonpi.swiftnotes.DataUtils.NOTE_TITLE;
+import static com.rajabhargava.android.ciphernotes.ColorPicker.ColorPickerSwatch.OnColorSelectedListener;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NEW_NOTE_REQUEST;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_BODY;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_COLOUR;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FONT_SIZE;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_HIDE_BODY;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_REQUEST_CODE;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_TITLE;
 
 
 public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {

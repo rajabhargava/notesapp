@@ -12,9 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 
-import com.moonpi.swiftnotes.R;
+import com.rajabhargava.android.ciphernotes.R;
 
-import static com.moonpi.swiftnotes.ColorPicker.ColorPickerSwatch.*;
+import static com.rajabhargava.android.ciphernotes.ColorPicker.ColorPickerSwatch.*;
 
 
 /**

@@ -14,9 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static com.moonpi.swiftnotes.MainActivity.*;
-import static com.moonpi.swiftnotes.MainActivity.getBackupPath;
-import static com.moonpi.swiftnotes.MainActivity.getLocalPath;
+import static com.rajabhargava.android.ciphernotes.MainActivity.getBackupPath;
+import static com.rajabhargava.android.ciphernotes.MainActivity.getLocalPath;
 
 /*
     *   JSON file structure:

@@ -806,9 +806,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RC_SIGN_IN) {
+        //if(requestCode==RC_SIGN_IN) {
             if (resultCode == RESULT_OK) {
 
+                Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_SHORT);
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 // If search was active -> call 'searchEnded' method
                 if (searchActive && searchMenu != null)
@@ -918,8 +919,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             }
 
-        }
-        super.onActivityResult(requestCode, resultCode, data);
+        //}
+        //super.onActivityResult(requestCode, resultCode, data);
     }
 
 

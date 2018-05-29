@@ -9,7 +9,7 @@
         android:title="@string/action_note_colour"
         android:orderInCategory="100"
         android:icon="@drawable/ic_note_colour"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item android:id="@+id/action_font_size"
         android:title="@string/action_font_size"
@@ -20,5 +20,10 @@
         android:title="@string/action_hide_body"
         android:orderInCategory="103"
         app:showAsAction="never" />
+
+    <item android:id="@+id/save_option"
+        android:title="SAVE"
+        android:orderInCategory="99"
+        app:showAsAction="always"/>
 
 </menu>

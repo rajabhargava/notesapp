@@ -377,6 +377,15 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
             return true;
         }
 
+        if(id == R.id.save_option) {
+            if (!isEmpty(titleEdit) || !isEmpty(bodyEdit))
+                saveChanges();
+
+            else
+                toastEditTextCannotBeEmpty();
+            return true;
+        }
+
         // Font size menu item clicked -> show font picker dialog
         if (id == R.id.action_font_size) {
             fontDialog.show();

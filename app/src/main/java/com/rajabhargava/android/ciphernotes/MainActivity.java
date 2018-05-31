@@ -16,6 +16,7 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,9 +30,13 @@ import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +45,9 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.rajabhargava.android.ciphernotes.DataUtils.BACKUP_FILE_NAME;
 import static com.rajabhargava.android.ciphernotes.DataUtils.BACKUP_FOLDER_PATH;
@@ -79,8 +86,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Toolbar toolbar;
     private MenuItem searchMenu;
 
+    private static final String TITLE_KEY = "title";
+    private static final String BODY_KEY = "body";
+    private static final String COLOUR_KEY = "colour";
+    private static final String FAVOURITE_KEY = "favourite";
+    private static final String FONT_SIZE_KEY = "fontSize";
+    private static final String HIDE_BODY_KEY = "hideBody";
+
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private DocumentReference mDocRef = FirebaseFirestore.getInstance().document("sampleData/Notes");
+
     private static JSONArray notes; // Main notes array
     private static NoteAdapter adapter; // Custom ListView notes adapter
 
@@ -225,6 +241,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             }
         };
+
     }
 
     @Override
@@ -238,6 +255,157 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onResume();
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
+
+    public void writeInDatabase(String title,String body,String colour,boolean favourite,int font_size,boolean hide_body){
+        Map<String,Object> dataToSave = new HashMap<String,Object>();
+        dataToSave.put(TITLE_KEY,title);
+        dataToSave.put(BODY_KEY,body);
+        dataToSave.put(COLOUR_KEY,colour);
+        dataToSave.put(FAVOURITE_KEY,favourite);
+        dataToSave.put(FONT_SIZE_KEY,font_size);
+        dataToSave.put(HIDE_BODY_KEY,hide_body);
+        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("Note","Document has been saved");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("Note","Document was not saved");
+            }
+        });
+    }
+
+    /**
+     * Callback method when EditActivity finished adding new note or editing existing note
+     * @param requestCode requestCode for intent sent, in our case either NEW_NOTE_REQUEST or position
+     * @param resultCode resultCode from activity, either RESULT_OK or RESULT_CANCELED
+     * @param data Data bundle passed back from EditActivity
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //if(requestCode==RC_SIGN_IN) {
+        if (resultCode == RESULT_OK) {
+
+            Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_SHORT);
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            // If search was active -> call 'searchEnded' method
+            if (searchActive && searchMenu != null)
+                searchMenu.collapseActionView();
+
+            // Get extras
+            Bundle mBundle = null;
+            if (data != null)
+                mBundle = data.getExtras();
+
+            if (mBundle != null) {
+                // If new note was saved
+                if (requestCode == NEW_NOTE_REQUEST) {
+                    JSONObject newNoteObject = null;
+
+                    try {
+                        // Add new note to array
+                        newNoteObject = new JSONObject();
+                        newNoteObject.put(NOTE_TITLE, mBundle.getString(NOTE_TITLE));
+                        newNoteObject.put(NOTE_BODY, mBundle.getString(NOTE_BODY));
+                        newNoteObject.put(NOTE_COLOUR, mBundle.getString(NOTE_COLOUR));
+                        newNoteObject.put(NOTE_FAVOURED, false);
+                        newNoteObject.put(NOTE_FONT_SIZE, mBundle.getInt(NOTE_FONT_SIZE));
+                        newNoteObject.put(NOTE_HIDE_BODY, mBundle.getBoolean(NOTE_HIDE_BODY));
+
+                        notes.put(newNoteObject);
+                        writeInDatabase(mBundle.getString(NOTE_TITLE),mBundle.getString(NOTE_BODY),mBundle.getString(NOTE_COLOUR),false,mBundle.getInt(NOTE_FONT_SIZE),mBundle.getBoolean(NOTE_HIDE_BODY));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    // If newNoteObject not null -> save notes array to local file and notify adapter
+                    if (newNoteObject != null) {
+                        adapter.notifyDataSetChanged();
+
+                        Boolean saveSuccessful = saveData(localPath, notes);
+
+                        if (saveSuccessful) {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    getResources().getString(R.string.toast_new_note),
+                                    Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
+                        // If no notes -> show 'Press + to add new note' text, invisible otherwise
+                        if (notes.length() == 0)
+                            noNotes.setVisibility(View.VISIBLE);
+
+                        else
+                            noNotes.setVisibility(View.INVISIBLE);
+                    }
+                }
+
+                // If existing note was updated (saved)
+                else {
+                    JSONObject newNoteObject = null;
+
+                    try {
+                        // Update array item with new note data
+                        newNoteObject = notes.getJSONObject(requestCode);
+                        newNoteObject.put(NOTE_TITLE, mBundle.getString(NOTE_TITLE));
+                        newNoteObject.put(NOTE_BODY, mBundle.getString(NOTE_BODY));
+                        newNoteObject.put(NOTE_COLOUR, mBundle.getString(NOTE_COLOUR));
+                        newNoteObject.put(NOTE_FONT_SIZE, mBundle.getInt(NOTE_FONT_SIZE));
+                        newNoteObject.put(NOTE_HIDE_BODY, mBundle.getBoolean(NOTE_HIDE_BODY));
+
+                        // Update note at position 'requestCode'
+                        notes.put(requestCode, newNoteObject);
+                        //writeInDatabase(newNoteObject);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    // If newNoteObject not null -> save notes array to local file and notify adapter
+                    if (newNoteObject != null) {
+                        adapter.notifyDataSetChanged();
+
+                        Boolean saveSuccessful = saveData(localPath, notes);
+
+                        if (saveSuccessful) {
+                            Toast toast = Toast.makeText(getApplicationContext(),
+                                    getResources().getString(R.string.toast_note_saved),
+                                    Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                    }
+                }
+            }
+        }
+
+
+        else if (resultCode == RESULT_CANCELED) {
+            finish();
+            Bundle mBundle = null;
+
+            // If data is not null, has "request" extra and is new note -> get extras to bundle
+            if (data != null && data.hasExtra("request") && requestCode == NEW_NOTE_REQUEST) {
+                mBundle = data.getExtras();
+
+                // If new note discarded -> toast empty note discarded
+                if (mBundle != null && mBundle.getString("request").equals("discard")) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            getResources().getString(R.string.toast_empty_note_discarded),
+                            Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }
+        }
+
+        //}
+        //super.onActivityResult(requestCode, resultCode, data);
+    }
+
+
 
     /**
      * Initialize toolbar with required components such as
@@ -797,132 +965,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-    /**
-     * Callback method when EditActivity finished adding new note or editing existing note
-     * @param requestCode requestCode for intent sent, in our case either NEW_NOTE_REQUEST or position
-     * @param resultCode resultCode from activity, either RESULT_OK or RESULT_CANCELED
-     * @param data Data bundle passed back from EditActivity
-     */
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        //if(requestCode==RC_SIGN_IN) {
-        if (resultCode == RESULT_OK) {
-
-            Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_SHORT);
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            // If search was active -> call 'searchEnded' method
-            if (searchActive && searchMenu != null)
-                searchMenu.collapseActionView();
-
-            // Get extras
-            Bundle mBundle = null;
-            if (data != null)
-                mBundle = data.getExtras();
-
-            if (mBundle != null) {
-                // If new note was saved
-                if (requestCode == NEW_NOTE_REQUEST) {
-                    JSONObject newNoteObject = null;
-
-                    try {
-                        // Add new note to array
-                        newNoteObject = new JSONObject();
-                        newNoteObject.put(NOTE_TITLE, mBundle.getString(NOTE_TITLE));
-                        newNoteObject.put(NOTE_BODY, mBundle.getString(NOTE_BODY));
-                        newNoteObject.put(NOTE_COLOUR, mBundle.getString(NOTE_COLOUR));
-                        newNoteObject.put(NOTE_FAVOURED, false);
-                        newNoteObject.put(NOTE_FONT_SIZE, mBundle.getInt(NOTE_FONT_SIZE));
-                        newNoteObject.put(NOTE_HIDE_BODY, mBundle.getBoolean(NOTE_HIDE_BODY));
-
-                        notes.put(newNoteObject);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                    // If newNoteObject not null -> save notes array to local file and notify adapter
-                    if (newNoteObject != null) {
-                        adapter.notifyDataSetChanged();
-
-                        Boolean saveSuccessful = saveData(localPath, notes);
-
-                        if (saveSuccessful) {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    getResources().getString(R.string.toast_new_note),
-                                    Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
-
-                        // If no notes -> show 'Press + to add new note' text, invisible otherwise
-                        if (notes.length() == 0)
-                            noNotes.setVisibility(View.VISIBLE);
-
-                        else
-                            noNotes.setVisibility(View.INVISIBLE);
-                    }
-                }
-
-                // If existing note was updated (saved)
-                else {
-                    JSONObject newNoteObject = null;
-
-                    try {
-                        // Update array item with new note data
-                        newNoteObject = notes.getJSONObject(requestCode);
-                        newNoteObject.put(NOTE_TITLE, mBundle.getString(NOTE_TITLE));
-                        newNoteObject.put(NOTE_BODY, mBundle.getString(NOTE_BODY));
-                        newNoteObject.put(NOTE_COLOUR, mBundle.getString(NOTE_COLOUR));
-                        newNoteObject.put(NOTE_FONT_SIZE, mBundle.getInt(NOTE_FONT_SIZE));
-                        newNoteObject.put(NOTE_HIDE_BODY, mBundle.getBoolean(NOTE_HIDE_BODY));
-
-                        // Update note at position 'requestCode'
-                        notes.put(requestCode, newNoteObject);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                    // If newNoteObject not null -> save notes array to local file and notify adapter
-                    if (newNoteObject != null) {
-                        adapter.notifyDataSetChanged();
-
-                        Boolean saveSuccessful = saveData(localPath, notes);
-
-                        if (saveSuccessful) {
-                            Toast toast = Toast.makeText(getApplicationContext(),
-                                    getResources().getString(R.string.toast_note_saved),
-                                    Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
-                    }
-                }
-            }
-        }
-
-
-        else if (resultCode == RESULT_CANCELED) {
-            finish();
-            Bundle mBundle = null;
-
-            // If data is not null, has "request" extra and is new note -> get extras to bundle
-            if (data != null && data.hasExtra("request") && requestCode == NEW_NOTE_REQUEST) {
-                mBundle = data.getExtras();
-
-                // If new note discarded -> toast empty note discarded
-                if (mBundle != null && mBundle.getString("request").equals("discard")) {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            getResources().getString(R.string.toast_empty_note_discarded),
-                            Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-            }
-        }
-
-        //}
-        //super.onActivityResult(requestCode, resultCode, data);
-    }
-
 
     /**
      * Favourite or un-favourite the note at position
@@ -1065,4 +1107,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public static File getBackupPath() {
         return backupPath;
     }
+
+
 }

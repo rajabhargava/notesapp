@@ -72,7 +72,6 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
     private AlertDialog fontDialog, saveChangesDialog;
     private ColorPickerDialog colorPickerDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -379,7 +378,9 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         if(id == R.id.save_option) {
             if (!isEmpty(titleEdit) || !isEmpty(bodyEdit))
+            {
                 saveChanges();
+            }
 
             else
                 toastEditTextCannotBeEmpty();

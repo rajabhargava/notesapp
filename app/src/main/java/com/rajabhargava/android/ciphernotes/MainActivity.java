@@ -30,13 +30,17 @@ import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -75,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static int RC_SIGN_IN = 1;
 
+     int countDocs = 0;
+
     List<AuthUI.IdpConfig> providers = Arrays.asList(
             new AuthUI.IdpConfig.EmailBuilder().build(),
             new AuthUI.IdpConfig.GoogleBuilder().build());
@@ -93,8 +99,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final String FONT_SIZE_KEY = "fontSize";
     private static final String HIDE_BODY_KEY = "hideBody";
 
+    //public String path = "";
+
+    private String userName;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private FirebaseFirestore mFirebaseFirestore;
     private DocumentReference mDocRef = FirebaseFirestore.getInstance().document("sampleData/Notes");
 
     private static JSONArray notes; // Main notes array
@@ -122,6 +132,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         localPath = new File(getFilesDir() + "/" + NOTES_FILE_NAME);
 
         mFirebaseAuth = FirebaseAuth.getInstance();
+
+        mFirebaseFirestore = FirebaseFirestore.getInstance();
 
         File backupFolder = new File(Environment.getExternalStorageDirectory() +
                 BACKUP_FOLDER_PATH);
@@ -227,6 +239,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 {
                     //Signed IN
                     Toast.makeText(MainActivity.this, "Signed In Successfully!.", Toast.LENGTH_SHORT).show();
+                    FirebaseUser userID = FirebaseAuth.getInstance().getCurrentUser();
+                    userName = userID.getEmail();
+                    System.out.println(userName);
+                    getAllDocuments();
                 }
                 else
                 {
@@ -264,7 +280,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         dataToSave.put(FAVOURITE_KEY,favourite);
         dataToSave.put(FONT_SIZE_KEY,font_size);
         dataToSave.put(HIDE_BODY_KEY,hide_body);
-        mDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+        userName = userName + "/"+"Notes"+countDocs;
+        DocumentReference userDocRef = FirebaseFirestore.getInstance().document(userName);
+        userDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d("Note","Document has been saved");
@@ -275,6 +294,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 Log.d("Note","Document was not saved");
             }
         });
+    }
+
+    public void getAllDocuments() {
+        mFirebaseFirestore.collection(userName)
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("Note", document.getId() + " => " + document.getData());
+                            }
+                        } else {
+                            Log.w("Note", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
+
     }
 
     /**
@@ -290,7 +327,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (resultCode == RESULT_OK) {
 
             Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_SHORT);
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//            userName = user.getEmail();
             // If search was active -> call 'searchEnded' method
             if (searchActive && searchMenu != null)
                 searchMenu.collapseActionView();

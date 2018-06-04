@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "616127318465-65i45tn1td9fl5908sqkl6mhn5lqjm2n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rajabhargava.android.ciphernotes",
+            "certificate_hash": "e121631b940323191a101389298267aec09384fe"
+          }
+        },
+        {
           "client_id": "616127318465-669bimpo4qu2pdlfdsnubcr1dqb2q8kq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

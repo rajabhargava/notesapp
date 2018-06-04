@@ -53,7 +53,7 @@
     <string name="dialog_check_restore_if_sure">Você deseja restaurar o backup das anotações?
         (O processo não pode ser desfeito)</string>
     <string name="dialog_restore_failed_title">Nenhum backup encontrado</string>
-    <string name="dialog_restore_failed">Para restaurar as anotações, o arquivo de backup tem que se econtrar no diretório \'External/Swiftnotes/swiftnotes_backup.json\'</string>
+    <string name="dialog_restore_failed">Para restaurar as anotações, o arquivo de backup tem que se econtrar no diretório \'External/Ciphernotes/ciphernotes_backup.json\'</string>
     <!-- -->
     <string name="new_note_content_description">Nova anotação</string>
     <string name="favourite_content_description">Favorito</string>

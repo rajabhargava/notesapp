@@ -54,7 +54,7 @@
         (Nu se poate anula)</string>
     <string name="dialog_restore_failed_title">Rezerva nu a fost gasita</string>
     <string name="dialog_restore_failed">Pentru a restaura notitele, fisierul de rezerva trebuie
-        sa fie in \'External/Swiftnotes/swiftnotes_backup.json\'</string>
+        sa fie in \'External/Ciphernotes/ciphernotes_backup.json\'</string>
     <!-- -->
     <string name="new_note_content_description">Notita noua</string>
     <string name="favourite_content_description">Favorit</string>

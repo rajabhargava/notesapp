@@ -54,7 +54,7 @@
         (non è possibile annullare)</string>
     <string name="dialog_restore_failed_title">Nessun backup trovato</string>
     <string name="dialog_restore_failed">Per ripristinare le note, il file di backup
-        deve trovarsi in \'External/Swiftnotes/swiftnotes_backup.json\'</string>
+        deve trovarsi in \'External/Ciphernotes/ciphernotes_backup.json\'</string>
     <!-- -->
     <string name="new_note_content_description">Nuova nota</string>
     <string name="favourite_content_description">Preferiti</string>

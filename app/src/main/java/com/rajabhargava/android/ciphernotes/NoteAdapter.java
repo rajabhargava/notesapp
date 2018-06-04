@@ -18,14 +18,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.rajabhargava.android.ciphernotes.DataUtils.*;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_BODY;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_COLOUR;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FAVOURED;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FONT_SIZE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_HIDE_BODY;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_TITLE;
-import static com.rajabhargava.android.ciphernotes.MainActivity.*;
 import static com.rajabhargava.android.ciphernotes.MainActivity.checkedArray;
 import static com.rajabhargava.android.ciphernotes.MainActivity.deleteActive;
 import static com.rajabhargava.android.ciphernotes.MainActivity.searchActive;

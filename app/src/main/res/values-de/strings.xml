@@ -54,7 +54,7 @@
         (Kann nicht rückgängig gemacht werden)</string>
     <string name="dialog_restore_failed_title">Kein Backup gefunden</string>
     <string name="dialog_restore_failed">Um die Notizen wiederherzustellen, muss die Backup Datei
-        in \'External/Swiftnotes/swiftnotes_backup.json\' sein</string>
+        in \'External/Ciphernotes/ciphernotes_backup.json\' sein</string>
     <!-- -->
     <string name="new_note_content_description">Neue Notiz</string>
     <string name="favourite_content_description">Favorit</string>

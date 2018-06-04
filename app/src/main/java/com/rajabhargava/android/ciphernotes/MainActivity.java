@@ -1,6 +1,5 @@
 package com.rajabhargava.android.ciphernotes;
 
-import android.content.Intent;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,14 +21,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.IdpResponse;
-import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -53,11 +51,13 @@ import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FONT_SIZE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_HIDE_BODY;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_REQUEST_CODE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_TITLE;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_USER_EMAIL;
 import static com.rajabhargava.android.ciphernotes.DataUtils.deleteNotes;
 import static com.rajabhargava.android.ciphernotes.DataUtils.isExternalStorageReadable;
 import static com.rajabhargava.android.ciphernotes.DataUtils.isExternalStorageWritable;
 import static com.rajabhargava.android.ciphernotes.DataUtils.retrieveData;
 import static com.rajabhargava.android.ciphernotes.DataUtils.saveData;
+
 
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,
@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static File localPath, backupPath;
 
     private static int RC_SIGN_IN = 1;
+
+    private String password;
+
+    static final int REQUEST_PASS = 10;
+    static final int REQUEST_ADDFACE = 1000;
 
     List<AuthUI.IdpConfig> providers = Arrays.asList(
             new AuthUI.IdpConfig.EmailBuilder().build(),
@@ -78,11 +83,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private TextView noNotes;
     private Toolbar toolbar;
     private MenuItem searchMenu;
+    //private Button addFace;
+    private Button email;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private static JSONArray notes; // Main notes array
     private static NoteAdapter adapter; // Custom ListView notes adapter
+    public String user_email = null;
 
     // Array of selected positions for deletion
     public static ArrayList<Integer> checkedArray = new ArrayList<Integer>();
@@ -130,8 +138,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         JSONArray tempNotes = retrieveData(localPath);
 
         // If not null -> equal main notes to retrieved notes
-        if (tempNotes != null)
+        if (tempNotes != null) {
+//            try {
+//                notes = getCurrentUsersNotes(tempNotes);
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
             notes = tempNotes;
+        }
+
+//        email = (Button) findViewById(R.id.get_email);
+//        email.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                for(int i=0;i<notes.length();i++) {
+//                    try {
+//                        System.out.println(notes.getJSONObject(i).getString(NOTE_USER_EMAIL));
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        });
 
         setContentView(R.layout.activity_main);
 
@@ -210,6 +238,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if(user!=null)
                 {
                     //Signed IN
+//                    Intent i = new Intent(MainActivity.this,FaceMain.class);
+//                    startActivity(i);
+
+                    user_email = user.getEmail().toString();
+
                     Toast.makeText(MainActivity.this, "Signed In Successfully!.", Toast.LENGTH_SHORT).show();
                 }
                 else
@@ -222,9 +255,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                     .setIsSmartLockEnabled(false)
                                     .build(),
                             RC_SIGN_IN);
+//                    Button rec = (Button) findViewById(R.id.take_picture);
+//                    rec.setVisibility(View.INVISIBLE);
+//                    Intent i = new Intent(MainActivity.this,FaceMain.class);
+//                    startActivity(i);
                 }
             }
         };
+
+//        addFace = (Button) findViewById(R.id.face);
+//        addFace.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainActivity.this, FaceMain.class);
+//                startActivity(i);
+//            }
+//        });
+    }
+
+    private JSONArray getCurrentUsersNotes(JSONArray tempNotes) throws JSONException {
+        JSONArray usersNotes = null;
+        for(int i=0; i<tempNotes.length(); i++) {
+            JSONObject currentNote = tempNotes.getJSONObject(i);
+            String emai_id = currentNote.getString(NOTE_USER_EMAIL);
+            if(emai_id.equals(user_email)) {
+                usersNotes.put(currentNote);
+            }
+        }
+        return usersNotes;
     }
 
     @Override
@@ -806,12 +864,35 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        //if(requestCode==RC_SIGN_IN) {
+        if(requestCode==RC_SIGN_IN && requestCode!=NEW_NOTE_REQUEST) {
             if (resultCode == RESULT_OK) {
-
-                Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_SHORT);
+//                Button rec = (Button) findViewById(R.id.take_picture);
+//                rec.setVisibility(View.INVISIBLE);
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                user_email = user.getEmail().toString();
+                Intent i = new Intent(MainActivity.this,FaceMain.class);
+                startActivityForResult(i,REQUEST_ADDFACE);
+               // Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_LONG);
+//                Intent in = new Intent(MainActivity.this,PasswordLock.class);
+//                startActivity(in);
+            }
+
+        }
+          else if (resultCode == RESULT_OK) {
+
+//                Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_LONG);
+//                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 // If search was active -> call 'searchEnded' method
+//                if(requestCode==REQUEST_PASS){
+//                      if(data.getExtras().getString("pin") != null){
+//                          password = data.getExtras().getString("pin");
+//                          Toast.makeText(MainActivity.this,"password"+password,Toast.LENGTH_SHORT).show();
+//                      }
+//                }
+
+                if (requestCode == REQUEST_ADDFACE) {
+                    Toast.makeText(MainActivity.this,"ADD Password",Toast.LENGTH_SHORT).show();
+                }
                 if (searchActive && searchMenu != null)
                     searchMenu.collapseActionView();
 
@@ -834,6 +915,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             newNoteObject.put(NOTE_FAVOURED, false);
                             newNoteObject.put(NOTE_FONT_SIZE, mBundle.getInt(NOTE_FONT_SIZE));
                             newNoteObject.put(NOTE_HIDE_BODY, mBundle.getBoolean(NOTE_HIDE_BODY));
+                            newNoteObject.put(NOTE_USER_EMAIL,user_email);
+                            //newNoteObject.put(NOTE_USER_PIN, password);
 
                             notes.put(newNoteObject);
 
@@ -875,6 +958,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             newNoteObject.put(NOTE_COLOUR, mBundle.getString(NOTE_COLOUR));
                             newNoteObject.put(NOTE_FONT_SIZE, mBundle.getInt(NOTE_FONT_SIZE));
                             newNoteObject.put(NOTE_HIDE_BODY, mBundle.getBoolean(NOTE_HIDE_BODY));
+                            newNoteObject.put(NOTE_USER_EMAIL,user_email);
+
 
                             // Update note at position 'requestCode'
                             notes.put(requestCode, newNoteObject);

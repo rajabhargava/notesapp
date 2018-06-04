@@ -54,7 +54,7 @@
         (元に戻すことはできません)</string>
     <string name="dialog_restore_failed_title">バックアップが見つかりません</string>
     <string name="dialog_restore_failed">メモを復元するには、バックアップファイルが
-        \'External/Swiftnotes/swiftnotes_backup.json\' に存在する必要があります</string>
+        \'External/Ciphernotes/ciphernotes_backup.json\' に存在する必要があります</string>
     <!-- -->
     <string name="new_note_content_description">新しいメモ</string>
     <string name="favourite_content_description">お気に入り</string>

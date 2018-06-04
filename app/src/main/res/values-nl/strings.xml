@@ -54,7 +54,7 @@
         (Kan niet ongedaan worden gemaakt)</string>
     <string name="dialog_restore_failed_title">Geen backup gevonden</string>
     <string name="dialog_restore_failed">Om notities te herstellen, moet het backupbestand
-         in \'External/Swiftnotes/swiftnotes_backup.json\' zitten</string>
+         in \'External/Ciphernotes/ciphernotes_backup.json\' zitten</string>
     <!-- -->
     <string name="new_note_content_description">Nieuwe notitie</string>
     <string name="favourite_content_description">Favoriet</string>

@@ -54,7 +54,7 @@
         (Nelze vrátit zpět)</string>
     <string name="dialog_restore_failed_title">Záloha nenalezena</string>
     <string name="dialog_restore_failed">Pro obnovení poznámek, soubor zálohy
-        musí být v \'External/Swiftnotes/swiftnotes_backup.json\'</string>
+        musí být v \'External/Ciphernotes/ciphernotes_backup.json\'</string>
     <!-- -->
     <string name="new_note_content_description">Nová poznámka</string>
     <string name="favourite_content_description">Oblíbené</string>

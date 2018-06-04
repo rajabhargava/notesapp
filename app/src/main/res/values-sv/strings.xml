@@ -54,7 +54,7 @@
         (Kan inte ångras)</string>
     <string name="dialog_restore_failed_title">Ingen säkerhetskopia hittades</string>
     <string name="dialog_restore_failed">För att kunna återställa anteckningar, måste säkerhetskopian
-        finnas i \'External/Swiftnotes/swiftnotes_backup.json\'</string>
+        finnas i \'External/Ciphernotes/ciphernotes_backup.json\'</string>
     <!-- -->
     <string name="new_note_content_description">Ny anteckning</string>
     <string name="favourite_content_description">Favorit</string>

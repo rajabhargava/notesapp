@@ -50,6 +50,7 @@ class DataUtils {
     static final String NOTE_FAVOURED = "favoured";
     static final String NOTE_FONT_SIZE = "fontSize";
     static final String NOTE_HIDE_BODY = "hideBody";
+    static final String NOTE_NUMBER = "noteNumber";
 
 
     /**

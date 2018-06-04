@@ -45,6 +45,7 @@ class NoteAdapter extends BaseAdapter implements ListAdapter {
      * @param context application context
      * @param adapterData JSONArray of notes
      */
+
     NoteAdapter(Context context, JSONArray adapterData) {
         this.context = context;
         this.adapterData = adapterData;
@@ -157,10 +158,10 @@ class NoteAdapter extends BaseAdapter implements ListAdapter {
             }
 
             // If current note is not selected -> set background colour to normal
-            else {
-                ((GradientDrawable) roundedCard.findDrawableByLayerId(R.id.card))
-                        .setColor(Color.parseColor(colour));
-            }
+//            else {
+//                ((GradientDrawable) roundedCard.findDrawableByLayerId(R.id.card))
+//                        .setColor(Color.parseColor(colour));
+//            }
 
             // Set note background style to rounded card
             relativeLayout.setBackground(roundedCard);

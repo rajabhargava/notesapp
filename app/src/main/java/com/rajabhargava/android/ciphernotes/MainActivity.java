@@ -62,6 +62,7 @@ import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_COLOUR;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FAVOURED;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FONT_SIZE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_HIDE_BODY;
+import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_NUMBER;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_REQUEST_CODE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_TITLE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.deleteNotes;
@@ -81,6 +82,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
      int countDocs = 0;
 
+     int nextIndexDoc = 0;
+
+     int jumperForRestore = 0;
+
     List<AuthUI.IdpConfig> providers = Arrays.asList(
             new AuthUI.IdpConfig.EmailBuilder().build(),
             new AuthUI.IdpConfig.GoogleBuilder().build());
@@ -98,8 +103,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final String FAVOURITE_KEY = "favourite";
     private static final String FONT_SIZE_KEY = "fontSize";
     private static final String HIDE_BODY_KEY = "hideBody";
-
-    //public String path = "";
 
     private String userName;
     private FirebaseAuth mFirebaseAuth;
@@ -122,7 +125,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private float newNoteButtonBaseYCoordinate; // Base Y coordinate of newNote button
 
     private AlertDialog backupCheckDialog, backupOKDialog, restoreCheckDialog, restoreFailedDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,8 +160,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         JSONArray tempNotes = retrieveData(localPath);
 
         // If not null -> equal main notes to retrieved notes
-        if (tempNotes != null)
-            notes = tempNotes;
+//        if (tempNotes != null)
+//            notes = tempNotes;
 
         setContentView(R.layout.activity_main);
 
@@ -175,8 +177,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         newNoteButtonBaseYCoordinate = newNote.getY();
 
         // Initialize NoteAdapter with notes array
-        adapter = new NoteAdapter(getApplicationContext(), notes);
-        listView.setAdapter(adapter);
+        //adapter = new NoteAdapter(getApplicationContext(), notes);
+        //listView.setAdapter(adapter);
 
         // Set item click, multi choice and scroll listeners
         listView.setOnItemClickListener(this);
@@ -243,6 +245,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     userName = userID.getEmail();
                     System.out.println(userName);
                     getAllDocuments();
+                    //restoreNotes();
                 }
                 else
                 {
@@ -273,30 +276,156 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public void writeInDatabase(String title,String body,String colour,boolean favourite,int font_size,boolean hide_body){
-        Map<String,Object> dataToSave = new HashMap<String,Object>();
-        dataToSave.put(TITLE_KEY,title);
-        dataToSave.put(BODY_KEY,body);
-        dataToSave.put(COLOUR_KEY,colour);
-        dataToSave.put(FAVOURITE_KEY,favourite);
-        dataToSave.put(FONT_SIZE_KEY,font_size);
-        dataToSave.put(HIDE_BODY_KEY,hide_body);
+        if(title != null)
+        {
+            Map<String,Object> dataToSave = new HashMap<String,Object>();
+            dataToSave.put(TITLE_KEY,title);
+            dataToSave.put(BODY_KEY,body);
+            dataToSave.put(COLOUR_KEY,colour);
+            dataToSave.put(FAVOURITE_KEY,favourite);
+            dataToSave.put(FONT_SIZE_KEY,font_size);
+            dataToSave.put(HIDE_BODY_KEY,hide_body);
+            dataToSave.put(NOTE_NUMBER,nextIndexDoc);
+            //dataToSave.put("PIN","1234");
 
-        userName = userName + "/"+"Notes"+countDocs;
-        DocumentReference userDocRef = FirebaseFirestore.getInstance().document(userName);
-        userDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                Log.d("Note","Document has been saved");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("Note","Document was not saved");
-            }
-        });
+            userName = userName + "/"+(nextIndexDoc);
+
+            DocumentReference userDocRef = FirebaseFirestore.getInstance().document(userName);
+            userDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Log.d("Note","Document has been saved");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("Note","Document was not saved");
+                }
+            });
+        }
     }
 
+    public void updateTheDatabase (int requestCode,String title,String body,String colour,boolean favourite,int font_size,boolean hide_body)
+    {
+        if(title != null)
+        {
+            Map<String,Object> dataToSave = new HashMap<String,Object>();
+            dataToSave.put(TITLE_KEY,title);
+            dataToSave.put(BODY_KEY,body);
+            dataToSave.put(COLOUR_KEY,colour);
+            dataToSave.put(FAVOURITE_KEY,favourite);
+            dataToSave.put(FONT_SIZE_KEY,font_size);
+            dataToSave.put(HIDE_BODY_KEY,hide_body);
+
+            userName = userName + "/"+(requestCode+1);
+
+            DocumentReference userDocRef = FirebaseFirestore.getInstance().document(userName);
+            userDocRef.set(dataToSave).addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    Log.d("Note","Document has been saved");
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.d("Note","Document was not saved");
+                }
+            });
+        }
+    }
+
+
+    public JSONArray deleteNote(JSONArray from, ArrayList<Integer> selectedNotes)
+    {
+        // Init new JSONArray
+        JSONArray newNotes = new JSONArray();
+        JSONArray tempNotes = new JSONArray();
+        JSONObject tempNote = new JSONObject();
+        // Loop through main notes
+        for (int i = 0; i < from.length(); i++) {
+
+            //Delete the notes selected
+
+            if(selectedNotes.contains(i))
+            {
+                try{
+                    tempNotes.put(0,from.get(i));
+                    tempNote = tempNotes.getJSONObject(0);
+                    System.out.println(tempNote);
+                    //int docNum = tempNote.getString("Note_Number")
+                    //System.out.println(docNum);
+                    String documentNo = tempNote.getString("noteNumber");//Integer.toString(docNum);
+                    System.out.println(documentNo);
+                    mFirebaseFirestore.collection(userName).document(documentNo)
+                            .delete()
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Log.d("Note", "DocumentSnapshot successfully deleted!");
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("Note", "Error deleting document", e);
+                                }
+                            });
+
+                }
+                catch (JSONException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
+            // If array of positions to delete doesn't contain current position -> put in new array
+            if (!selectedNotes.contains(i)) {
+                try {
+                    newNotes.put(from.get(i));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        // Finally, return the new notes
+        getAllDocuments();
+        return newNotes;
+
+    }
+
+
+    public void restoreNotes () {
+        adapter = new NoteAdapter(getApplicationContext(), notes);
+        listView.setAdapter(adapter);
+    }
+
+    public void clearNotesArray(JSONArray array){
+        int size = array.length();
+        System.out.println("size before clearing: "+ array.length());
+        try {
+            int i=0;
+            while(array.length()>=0)
+            {
+                System.out.println("Element at position "+ i + ": "+array.get(i));
+                array.remove(i);
+                //  remove() removes object with its index
+                //i++;
+            }
+
+        }
+        catch (JSONException e){
+            e.printStackTrace();
+        }
+
+        System.out.println("Size after clearing: "+ array.length());
+    }
+
+
     public void getAllDocuments() {
+        countDocs=0;
+        clearNotesArray(notes);
         mFirebaseFirestore.collection(userName)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -305,10 +434,34 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("Note", document.getId() + " => " + document.getData());
+                                countDocs++;
+                                nextIndexDoc = Integer.parseInt(document.getId());
+                                Map<String,Object> tempData = new HashMap<String, Object>();
+                                tempData = document.getData();
+                                JSONObject newNoteObject = new JSONObject();
+                                try {
+                                    // Add new note to array
+                                    newNoteObject.put(NOTE_TITLE,tempData.get("title"));
+                                    newNoteObject.put(NOTE_BODY, tempData.get("body"));
+                                    newNoteObject.put(NOTE_COLOUR, tempData.get("colour"));
+                                    newNoteObject.put(NOTE_FAVOURED, false);
+                                    newNoteObject.put(NOTE_FONT_SIZE, document.get("fontSize"));
+                                    newNoteObject.put(NOTE_HIDE_BODY, document.get("hideBody"));
+                                    newNoteObject.put(NOTE_NUMBER, document.get("noteNumber"));
+                                    notes.put(newNoteObject);
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
                             }
                         } else {
                             Log.w("Note", "Error getting documents.", task.getException());
                         }
+                        nextIndexDoc++;
+                        System.out.println("countDocs : "+ countDocs);
+                        System.out.println("Next index doc: "+ nextIndexDoc);
+                        System.out.println(notes);
+                        restoreNotes();
                     }
                 });
 
@@ -327,8 +480,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         if (resultCode == RESULT_OK) {
 
             Toast.makeText(this,"Signed In and result OK", Toast.LENGTH_SHORT);
-//            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-//            userName = user.getEmail();
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            userName = user.getEmail();
             // If search was active -> call 'searchEnded' method
             if (searchActive && searchMenu != null)
                 searchMenu.collapseActionView();
@@ -389,6 +542,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     try {
                         // Update array item with new note data
                         newNoteObject = notes.getJSONObject(requestCode);
+                        System.out.println("Note Edited : "+ requestCode);
                         newNoteObject.put(NOTE_TITLE, mBundle.getString(NOTE_TITLE));
                         newNoteObject.put(NOTE_BODY, mBundle.getString(NOTE_BODY));
                         newNoteObject.put(NOTE_COLOUR, mBundle.getString(NOTE_COLOUR));
@@ -397,7 +551,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                         // Update note at position 'requestCode'
                         notes.put(requestCode, newNoteObject);
-                        //writeInDatabase(newNoteObject);
+                        updateTheDatabase(requestCode,mBundle.getString(NOTE_TITLE),mBundle.getString(NOTE_BODY),mBundle.getString(NOTE_COLOUR),false,mBundle.getInt(NOTE_FONT_SIZE),mBundle.getBoolean(NOTE_HIDE_BODY));
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -590,7 +744,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             boolean restoreSuccessful = saveData(localPath, tempNotes);
 
                             if (restoreSuccessful) {
-                                notes = tempNotes;
+                                //notes = tempNotes;
 
                                 adapter = new NoteAdapter(getApplicationContext(), notes);
                                 listView.setAdapter(adapter);
@@ -730,7 +884,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         // 'Backup notes' pressed -> show backupCheckDialog
         if (id == R.id.action_backup) {
-            backupCheckDialog.show();
+            //backupCheckDialog.show();
+            clearNotesArray(notes);
             return true;
         }
 
@@ -741,7 +896,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         // 'Restore notes' pressed -> show restoreCheckDialog
         if (id == R.id.action_restore) {
-            restoreCheckDialog.show();
+            //restoreCheckDialog.show();
+
+            {restoreNotes();jumperForRestore = 1;}
+
             return true;
         }
 
@@ -831,23 +989,25 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            // Pass notes and checked items for deletion array to 'deleteNotes'
-                            notes = deleteNotes(notes, checkedArray);
+//                            // Pass notes and checked items for deletion array to 'deleteNotes'
+//                            notes = deleteNotes(notes, checkedArray);
+//
+//                            // Create and set new adapter with new notes array
+//                            adapter = new NoteAdapter(getApplicationContext(), notes);
+//                            listView.setAdapter(adapter);
+//
+//                            // Attempt to save notes to local file
+//                            Boolean saveSuccessful = saveData(localPath, notes);
+//
+//                            // If save successful -> toast successfully deleted
+//                            if (saveSuccessful) {
+//                                Toast toast = Toast.makeText(getApplicationContext(),
+//                                        getResources().getString(R.string.toast_deleted),
+//                                        Toast.LENGTH_SHORT);
+//                                toast.show();
+//                            }
 
-                            // Create and set new adapter with new notes array
-                            adapter = new NoteAdapter(getApplicationContext(), notes);
-                            listView.setAdapter(adapter);
-
-                            // Attempt to save notes to local file
-                            Boolean saveSuccessful = saveData(localPath, notes);
-
-                            // If save successful -> toast successfully deleted
-                            if (saveSuccessful) {
-                                Toast toast = Toast.makeText(getApplicationContext(),
-                                        getResources().getString(R.string.toast_deleted),
-                                        Toast.LENGTH_SHORT);
-                                toast.show();
-                            }
+                            notes = deleteNote(notes, checkedArray);
 
                             // Smooth scroll to top
                             listView.post(new Runnable() {

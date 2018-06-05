@@ -21,7 +21,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static File localPath, backupPath;
 
-    private static int RC_SIGN_IN = 1;
+    private static int RC_SIGN_IN = 16546;
 
     private String password;
 
@@ -84,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private Toolbar toolbar;
     private MenuItem searchMenu;
     //private Button addFace;
-    private Button email;
+    //private Button email;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -273,17 +272,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 //        });
     }
 
-    private JSONArray getCurrentUsersNotes(JSONArray tempNotes) throws JSONException {
-        JSONArray usersNotes = null;
-        for(int i=0; i<tempNotes.length(); i++) {
-            JSONObject currentNote = tempNotes.getJSONObject(i);
-            String emai_id = currentNote.getString(NOTE_USER_EMAIL);
-            if(emai_id.equals(user_email)) {
-                usersNotes.put(currentNote);
-            }
-        }
-        return usersNotes;
-    }
+//    private JSONArray getCurrentUsersNotes(JSONArray tempNotes) throws JSONException {
+//        JSONArray usersNotes = null;
+//        for(int i=0; i<tempNotes.length(); i++) {
+//            JSONObject currentNote = tempNotes.getJSONObject(i);
+//            String emai_id = currentNote.getString(NOTE_USER_EMAIL);
+//            if(emai_id.equals(user_email)) {
+//                usersNotes.put(currentNote);
+//            }
+//        }
+//        return usersNotes;
+//    }
 
     @Override
     public void onPause(){
@@ -864,7 +863,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RC_SIGN_IN && requestCode!=NEW_NOTE_REQUEST) {
+        if(requestCode==RC_SIGN_IN && requestCode!=NEW_NOTE_REQUEST ) {
             if (resultCode == RESULT_OK) {
 //                Button rec = (Button) findViewById(R.id.take_picture);
 //                rec.setVisibility(View.INVISIBLE);
@@ -987,7 +986,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
             else if (resultCode == RESULT_CANCELED) {
-                finish();
+//                if(data.getExtras().getString("is_changed").equalsIgnoreCase("no")) {
+//
+//                }
+//                finish();
                 Bundle mBundle = null;
 
                 // If data is not null, has "request" extra and is new note -> get extras to bundle

@@ -473,8 +473,10 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
                 else {
                     imm.hideSoftInputFromWindow(titleEdit.getWindowToken(), 0);
-
-                    //finish();
+                    Intent i = new Intent();
+                    i.putExtra("is_changed","no");
+                    setResult(RESULT_CANCELED,i);
+                    finish();
                     overridePendingTransition(0, 0);
                 }
             }

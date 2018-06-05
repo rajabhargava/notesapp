@@ -32,6 +32,8 @@ import static com.rajabhargava.android.ciphernotes.MainActivity.searchActive;
 import static com.rajabhargava.android.ciphernotes.MainActivity.setFavourite;
 
 
+//Changes made for new commit ...
+
 /**
  * Adapter class for custom notes ListView
  */

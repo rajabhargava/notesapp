@@ -72,6 +72,9 @@ import static com.rajabhargava.android.ciphernotes.DataUtils.retrieveData;
 import static com.rajabhargava.android.ciphernotes.DataUtils.saveData;
 
 
+
+//Changes made for new commit ...
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener,
         Toolbar.OnMenuItemClickListener, AbsListView.MultiChoiceModeListener,
         SearchView.OnQueryTextListener {

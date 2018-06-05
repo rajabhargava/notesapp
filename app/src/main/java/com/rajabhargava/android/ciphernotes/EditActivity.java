@@ -1,5 +1,6 @@
 package com.rajabhargava.android.ciphernotes;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -19,22 +20,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.rajabhargava.android.ciphernotes.ColorPicker.ColorPickerDialog;
-
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.ShortBufferException;
-import javax.crypto.spec.SecretKeySpec;
 
 import static com.rajabhargava.android.ciphernotes.ColorPicker.ColorPickerSwatch.OnColorSelectedListener;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NEW_NOTE_REQUEST;
@@ -44,10 +35,12 @@ import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_FONT_SIZE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_HIDE_BODY;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_REQUEST_CODE;
 import static com.rajabhargava.android.ciphernotes.DataUtils.NOTE_TITLE;
+//import static com.rajabhargava.android.ciphernotes.MainActivity.user_email;
 
 
 public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
 
+    private static final int FACE_REC = 1 ;
     // Layout components
     private EditText titleEdit, bodyEdit;
     private RelativeLayout relativeLayoutEdit;
@@ -178,7 +171,36 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
             public void onClick(View v) {
                 try{
                     //is_encrypted = true;
-                    decrypto();
+                    //decrypto();
+                    PopupMenu decryptMenu = null;
+
+                    decryptMenu = new PopupMenu(EditActivity.this, decrypt);
+
+//                    decryptMenu.getMenuInflater().inflate(R.menu.decrypt_menu,decryptMenu.getMenu());
+
+                    decryptMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem menuItem) {
+                            switch (menuItem.getItemId()) {
+                                case R.id.face : Intent i = new Intent(EditActivity.this, FaceDecrypt.class);
+                                                 startActivityForResult(i,FACE_REC);
+                                                 break;
+                                case R.id.pin : Toast.makeText(EditActivity.this,"Coming Soon",Toast.LENGTH_SHORT).show();
+                                                break;
+                            }
+                           // Toast.makeText(EditActivity.this,"You Clicked : " + menuItem.getTitle(),Toast.LENGTH_SHORT).show();
+
+                            return true;
+                        }
+                    });
+                    decryptMenu.inflate(R.menu.decrypt_menu);
+                    decryptMenu.show();
+//                    Intent i = new Intent(EditActivity.this, FaceDecrypt.class);
+//                    startActivityForResult(i,FACE_REC);
+//                    String is_rec = getIntent().getExtras().getString("is_rec");
+//                    if(is_rec=="false") {
+//                        Toast.makeText(EditActivity.this,"Cannot be decrypted",Toast.LENGTH_SHORT).show();
+//                    }
                 }
                 catch(Exception e){
                     e.printStackTrace();
@@ -187,50 +209,33 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         });
     }
 
-    private void decrypto() throws InvalidKeyException, NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException, BadPaddingException, IllegalBlockSizeException {
-        byte[] keyBytes = "abcdefghijklmnop".getBytes();
-        SecretKeySpec key = new SecretKeySpec(keyBytes, "AES");
-        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS7Padding", "BC");
-        cipher.init(Cipher.DECRYPT_MODE, key);
-        String enc = bodyEdit.getText().toString();
-        byte[] dec = cipher.doFinal(enc.getBytes());
-        bodyEdit.setText(new String(dec));
+    private void decrypto() {
+
+        String base64str = bodyEdit.getText().toString ();
+        byte [] base64Byte = null;
+
+        try {
+            base64Byte = base64.decryptBASE64(base64str);
+        } catch (Exception e) {
+            e.printStackTrace ();
+        }
+        String output1 = new String (base64Byte);
+        bodyEdit.setText (output1.toString ());
 
     }
 
-    private void encrypto() throws NoSuchPaddingException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, ShortBufferException, BadPaddingException, IllegalBlockSizeException {
+    private void encrypto() {
 
-        byte[] input = bodyEdit.getText().toString().getBytes();
+        byte[] base64Data = bodyEdit.getText().toString().getBytes();
+        String base64Str = "";
 
+        try {
+            base64Str =base64.encryptBASE64(base64Data);
+        } catch (Exception e){
+            e.printStackTrace ();
+        }
+        bodyEdit.setText(base64Str);
 
-        byte[] keyBytes = "abcdefghijklmnop".getBytes();
-
-        SecretKeySpec key = new SecretKeySpec(keyBytes, "AES");
-
-        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS7Padding", "BC");
-
-       // System.out.println(new String(input));
-       // o.setText( new String(input));
-
-
-        // encryption pass
-        cipher.init(Cipher.ENCRYPT_MODE, key);
-
-        byte[] cipherText = new byte[cipher.getOutputSize(input.length)];
-        int ctLength = cipher.update(input, 0, input.length, cipherText, 0);
-        ctLength += cipher.doFinal(cipherText, ctLength);
-        System.out.println(new String(cipherText));
-        bodyEdit.setText(new String(cipherText));
-        System.out.println(ctLength);
-
-        // decryption pass
-//        cipher.init(Cipher.DECRYPT_MODE, key);
-//        byte[] plainText = new byte[cipher.getOutputSize(ctLength)];
-//        int ptLength = cipher.update(cipherText, 0, ctLength, plainText, 0);
-//        ptLength += cipher.doFinal(plainText, ptLength);
-//        System.out.println(new String(plainText));
-//        d.setText("Decrypted: "+ new String(plainText));
-//        System.out.println(ptLength);
     }
 
 
@@ -429,6 +434,7 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
         intent.putExtra(NOTE_COLOUR, colour);
         intent.putExtra(NOTE_FONT_SIZE, fontSize);
         intent.putExtra(NOTE_HIDE_BODY, hideBody);
+        //intent.putExtra(NOTE_USER_EMAIL, user_email);
 
         setResult(RESULT_OK, intent);
 
@@ -468,7 +474,7 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                 else {
                     imm.hideSoftInputFromWindow(titleEdit.getWindowToken(), 0);
 
-                    finish();
+                    //finish();
                     overridePendingTransition(0, 0);
                 }
             }
@@ -532,4 +538,29 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
 
         super.onConfigurationChanged(newConfig);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == Activity.RESULT_OK) {
+            if(requestCode == FACE_REC) {
+
+                String is_rec = data.getExtras().getString("is_rec");
+                if (is_rec.equals("false")) {
+                    Toast.makeText(EditActivity.this, "Cannot be decrypted", Toast.LENGTH_LONG).show();
+                }
+                else if (is_rec.equals("true")) {
+                    Toast.makeText(EditActivity.this, "Can be decrypted", Toast.LENGTH_LONG).show();
+                    decrypto();
+                }
+            }
+            else {
+                Toast.makeText(EditActivity.this, "Error in req", Toast.LENGTH_LONG).show();
+            }
+            }
+                else {
+            Toast.makeText(EditActivity.this, "Error in res", Toast.LENGTH_LONG).show();
+        }
+    }
+
 }

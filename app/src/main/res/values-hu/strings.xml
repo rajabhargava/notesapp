@@ -51,7 +51,7 @@
     <string name="dialog_backup_created">Biztonsági mentés létrehozva:</string>
     <string name="dialog_check_restore_if_sure">Biztos helyre szeretnéd állítani a jegyzeteket biztonsági mentésből? (Nem lehet visszavonni)</string>
     <string name="dialog_restore_failed_title">Nem található biztonsági mentés</string>
-    <string name="dialog_restore_failed">A jegyzetek visszaállításához a biztonsági mentésnek itt kell lennie: \'External/Swiftnotes/swiftnotes_backup.json\'</string>
+    <string name="dialog_restore_failed">A jegyzetek visszaállításához a biztonsági mentésnek itt kell lennie: \'External/Ciphernotes/ciphernotes_backup.json\'</string>
     <!-- -->
     <string name="new_note_content_description">Új jegyzet</string>
     <string name="favourite_content_description">Kedvenc</string>

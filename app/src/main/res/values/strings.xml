@@ -11,6 +11,7 @@
     <string name="yes_button">Yes</string>
     <string name="no_button">No</string>
     <!-- -->
+
     <string-array name="colourNames">
         <item>Blue</item>
         <item>Teal</item>
@@ -70,5 +71,20 @@
     <string name="toast_backup_no_notes">No notes to backup</string>
     <string name="toast_restore_successful">Notes restored</string>
     <string name="toast_restore_unsuccessful">Restore unsuccessful</string>
+
+    <string name="camera_permission_confirmation">This app uses CameraView. In order to do that, it needs permission to access camera.</string>
+    <string name="camera_permission_not_granted">Camera app cannot do anything without camera permission.</string>
+    <string name="picture_taken">Picture taken</string>
+    <string name="aspect_ratio">Aspect ratio</string>
+    <string name="switch_flash">Switch flash</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="flash_auto">Flash auto</string>
+    <string name="flash_off">Flash off</string>
+    <string name="flash_on">Flash on</string>
+    <string name="take_picture">Recognize</string>
+    <string name="add_person">Add</string>
+    <string name="title_activity_add_person">AddPerson</string>
+    <string name="pin_optional">Password is optional. It is required when you are in very low light and your face is
+                                not clearly visible in camera.You can skip this part</string>
 
 </resources>

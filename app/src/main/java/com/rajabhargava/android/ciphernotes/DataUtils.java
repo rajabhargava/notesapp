@@ -38,8 +38,8 @@ class DataUtils {
     static final String NOTES_FILE_NAME = "notes.json"; // Local notes file name
     private static final String NOTES_ARRAY_NAME = "notes"; // Root object name
 
-    static final String BACKUP_FOLDER_PATH = "/Swiftnotes"; // Backup folder path
-    static final String BACKUP_FILE_NAME = "swiftnotes_backup.json"; // Backup file name
+    static final String BACKUP_FOLDER_PATH = "/Ciphernotes"; // Backup folder path
+    static final String BACKUP_FILE_NAME = "ciphernotes_backup.json"; // Backup file name
 
     // Note data constants used in intents and in key-value store
     static final int NEW_NOTE_REQUEST = 60000;
@@ -50,7 +50,8 @@ class DataUtils {
     static final String NOTE_FAVOURED = "favoured";
     static final String NOTE_FONT_SIZE = "fontSize";
     static final String NOTE_HIDE_BODY = "hideBody";
-
+    static final String NOTE_USER_EMAIL = "email";
+    static final String NOTE_USER_PIN =  "pin";
 
     /**
      * Wrap 'notes' array into a root object and store in file 'toFile'

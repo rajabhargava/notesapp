@@ -16,98 +16,17 @@
     </loaded-modules>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d798f7be-a683-4531-b201-a1eddc983886" name="Default" comment="">
+    <list default="true" id="d798f7be-a683-4531-b201-a1eddc983886" name="Default" comment="bugs fixed">
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/resourceHashesCache.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/jarAnalysis.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskJars.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_extensions_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_extensions_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customtabs_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_customtabs_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_design_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_monitor_1_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_test_runner_1_0_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_transition_27_1_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_4_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_auth_4_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_ads_identifier_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_api_phone_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_api_phone_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_auth_base_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_flags_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_flags_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_15_0_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_15_0_4.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_impl_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_0_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_0_1.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_impl_16_0_0.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__me_zhanghai_android_materialprogressbar_library_1_4_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__me_zhanghai_android_materialprogressbar_library_1_4_2.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/notesapp.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" afterPath="$PROJECT_DIR$/app/google-services.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/DataUtils.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/DataUtils.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/EditActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/EditActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/NoteAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/NoteAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-cs/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-cs/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-de/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-de/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-fr/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-hu/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-hu/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ja/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-ja/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-nl/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-nl/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-pt-rBR/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-pt-rBR/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-ro/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-ro/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-sv/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values-sv/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,92 +59,99 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="123" column="62" lean-forward="false" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
+            <state relative-caret-position="255">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding>
-                <element signature="e#3795#3804#0" expanded="true" />
-                <element signature="e#8579#8983#0" expanded="true" />
-                <element signature="e#8982#8983#0" expanded="true" />
-                <element signature="e#9275#10622#0" expanded="true" />
-                <element signature="e#10621#10622#0" expanded="true" />
-                <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-                <element signature="docComment;method#initToolbar#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#11898#11915#0" expanded="true" />
-                <element signature="e#12706#12739#0" expanded="true" />
-                <element signature="class#12909:14120" expanded="false" />
-                <element signature="docComment;method#initDialogs#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#initDialogs#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#14760#14782#0" expanded="true" />
-                <element signature="e#14812#14848#0" expanded="true" />
-                <element signature="e#14885#14904#0" expanded="true" />
-                <element signature="e#14906#16198#0" expanded="true" />
-                <element signature="e#15525#15579#0" expanded="true" />
-                <element signature="e#15976#16032#0" expanded="true" />
-                <element signature="e#16197#16198#0" expanded="true" />
-                <element signature="e#16235#16253#0" expanded="true" />
-                <element signature="e#16255#16483#0" expanded="true" />
-                <element signature="e#16482#16483#0" expanded="true" />
-                <element signature="e#16673#16709#0" expanded="true" />
-                <element signature="e#16739#16780#0" expanded="true" />
-                <element signature="e#16898#17126#0" expanded="true" />
-                <element signature="e#17125#17126#0" expanded="true" />
-                <element signature="e#17522#17545#0" expanded="true" />
-                <element signature="e#17575#17612#0" expanded="true" />
-                <element signature="e#17649#17668#0" expanded="true" />
-                <element signature="e#17670#19729#0" expanded="true" />
-                <element signature="e#18497#18556#0" expanded="true" />
-                <element signature="e#19293#19354#0" expanded="true" />
-                <element signature="e#19728#19729#0" expanded="true" />
-                <element signature="e#19766#19784#0" expanded="true" />
-                <element signature="e#19786#20014#0" expanded="true" />
-                <element signature="e#20013#20014#0" expanded="true" />
-                <element signature="e#20204#20240#0" expanded="true" />
-                <element signature="e#20270#20300#0" expanded="true" />
-                <element signature="e#20357#20585#0" expanded="true" />
-                <element signature="e#20584#20585#0" expanded="true" />
-                <element signature="method#showBackupSuccessfulDialog#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#showRestoreFailedDialog#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#24844#24870#0" expanded="true" />
-                <element signature="e#24904#24932#0" expanded="true" />
-                <element signature="e#24973#24992#0" expanded="true" />
-                <element signature="e#24994#25763#0" expanded="true" />
-                <element signature="e#25762#25763#0" expanded="true" />
-                <element signature="e#25804#25822#0" expanded="true" />
-                <element signature="e#25824#26072#0" expanded="true" />
-                <element signature="e#26071#26072#0" expanded="true" />
-                <element signature="docComment;method#onItemCheckedStateChanged#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onItemCheckedStateChanged#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#27261#27310#0" expanded="true" />
-                <element signature="method#onActionItemClicked#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#27806#27828#0" expanded="true" />
-                <element signature="e#27890#29753#0" expanded="true" />
-                <element signature="e#28842#28890#0" expanded="true" />
-                <element signature="e#29124#29328#0" expanded="true" />
-                <element signature="e#29327#29328#0" expanded="true" />
-                <element signature="e#29752#29753#0" expanded="true" />
-                <element signature="e#29819#30067#0" expanded="true" />
-                <element signature="e#30066#30067#0" expanded="true" />
-                <element signature="method#onCreateActionMode#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#onDestroyActionMode#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#38536#38585#0" expanded="true" />
-                <element signature="e#40709#40760#0" expanded="true" />
-                <element signature="e#41627#41688#0" expanded="true" />
-                <element signature="e#43970#44142#0" expanded="true" />
-                <element signature="e#44141#44142#0" expanded="true" />
+                <element signature="e#3771#3780#0" expanded="true" />
+                <element signature="e#8555#8959#0" expanded="true" />
+                <element signature="e#8958#8959#0" expanded="true" />
+                <element signature="e#9251#10598#0" expanded="true" />
+                <element signature="e#10597#10598#0" expanded="true" />
+                <element signature="e#11896#11913#0" expanded="true" />
+                <element signature="e#12704#12737#0" expanded="true" />
+                <element signature="e#14758#14780#0" expanded="true" />
+                <element signature="e#14810#14846#0" expanded="true" />
+                <element signature="e#14883#14902#0" expanded="true" />
+                <element signature="e#14904#16196#0" expanded="true" />
+                <element signature="e#15523#15577#0" expanded="true" />
+                <element signature="e#15974#16030#0" expanded="true" />
+                <element signature="e#16195#16196#0" expanded="true" />
+                <element signature="e#16233#16251#0" expanded="true" />
+                <element signature="e#16253#16481#0" expanded="true" />
+                <element signature="e#16480#16481#0" expanded="true" />
+                <element signature="e#16671#16707#0" expanded="true" />
+                <element signature="e#16737#16778#0" expanded="true" />
+                <element signature="e#16896#17124#0" expanded="true" />
+                <element signature="e#17123#17124#0" expanded="true" />
+                <element signature="e#17520#17543#0" expanded="true" />
+                <element signature="e#17573#17610#0" expanded="true" />
+                <element signature="e#17647#17666#0" expanded="true" />
+                <element signature="e#17668#19727#0" expanded="true" />
+                <element signature="e#18495#18554#0" expanded="true" />
+                <element signature="e#19291#19352#0" expanded="true" />
+                <element signature="e#19726#19727#0" expanded="true" />
+                <element signature="e#19764#19782#0" expanded="true" />
+                <element signature="e#19784#20012#0" expanded="true" />
+                <element signature="e#20011#20012#0" expanded="true" />
+                <element signature="e#20202#20238#0" expanded="true" />
+                <element signature="e#20268#20298#0" expanded="true" />
+                <element signature="e#20355#20583#0" expanded="true" />
+                <element signature="e#20582#20583#0" expanded="true" />
+                <element signature="e#24842#24868#0" expanded="true" />
+                <element signature="e#24902#24930#0" expanded="true" />
+                <element signature="e#24971#24990#0" expanded="true" />
+                <element signature="e#24992#25761#0" expanded="true" />
+                <element signature="e#25760#25761#0" expanded="true" />
+                <element signature="e#25802#25820#0" expanded="true" />
+                <element signature="e#25822#26070#0" expanded="true" />
+                <element signature="e#26069#26070#0" expanded="true" />
+                <element signature="e#27259#27308#0" expanded="true" />
+                <element signature="e#27804#27826#0" expanded="true" />
+                <element signature="e#27888#29751#0" expanded="true" />
+                <element signature="e#28840#28888#0" expanded="true" />
+                <element signature="e#29122#29326#0" expanded="true" />
+                <element signature="e#29325#29326#0" expanded="true" />
+                <element signature="e#29750#29751#0" expanded="true" />
+                <element signature="e#29817#30065#0" expanded="true" />
+                <element signature="e#30064#30065#0" expanded="true" />
+                <element signature="e#38535#38584#0" expanded="true" />
+                <element signature="e#40708#40759#0" expanded="true" />
+                <element signature="e#41739#41800#0" expanded="true" />
+                <element signature="e#44082#44254#0" expanded="true" />
+                <element signature="e#44253#44254#0" expanded="true" />
+                <element signature="e#46405#46406#0" expanded="true" />
+                <element signature="e#46437#46438#0" expanded="true" />
+                <element signature="e#46529#46530#0" expanded="true" />
+                <element signature="e#46562#46563#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FileUtils.java">
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+            <state relative-caret-position="169">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-205">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -234,7 +160,7 @@
       <file leaf-file-name="FaceDecrypt.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceDecrypt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
+            <state relative-caret-position="-2145">
               <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -243,12 +169,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/EditActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="186">
+              <caret line="428" column="37" lean-forward="false" selection-start-line="428" selection-start-column="37" selection-end-line="428" selection-end-column="37" />
+              <folding>
+                <element signature="e#4250#4816#0" expanded="true" />
+                <element signature="e#4815#4816#0" expanded="true" />
+                <element signature="e#5557#5582#0" expanded="true" />
+                <element signature="e#6230#6553#0" expanded="true" />
+                <element signature="e#6552#6553#0" expanded="true" />
+                <element signature="e#6592#8608#0" expanded="true" />
+                <element signature="e#7076#7966#0" expanded="true" />
+                <element signature="e#7965#7966#0" expanded="true" />
+                <element signature="e#8607#8608#0" expanded="true" />
+                <element signature="e#9745#9894#0" expanded="true" />
+                <element signature="e#9893#9894#0" expanded="true" />
+                <element signature="e#10628#10655#0" expanded="true" />
+                <element signature="e#10925#11550#0" expanded="true" />
+                <element signature="e#11549#11550#0" expanded="true" />
+                <element signature="e#11670#11695#0" expanded="true" />
+                <element signature="e#11740#12124#0" expanded="true" />
+                <element signature="e#12123#12124#0" expanded="true" />
+                <element signature="e#12185#12413#0" expanded="true" />
+                <element signature="e#12412#12413#0" expanded="true" />
+                <element signature="e#12567#12595#0" expanded="true" />
+                <element signature="e#12632#12651#0" expanded="true" />
+                <element signature="e#12653#13195#0" expanded="true" />
+                <element signature="e#13194#13195#0" expanded="true" />
+                <element signature="e#13232#13250#0" expanded="true" />
+                <element signature="e#13252#14116#0" expanded="true" />
+                <element signature="e#14115#14116#0" expanded="true" />
+                <element signature="e#15570#15595#0" expanded="true" />
+                <element signature="e#15743#15800#0" expanded="true" />
+                <element signature="e#16085#16110#0" expanded="true" />
+                <element signature="e#16257#16315#0" expanded="true" />
+                <element signature="e#19260#19325#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -277,10 +235,16 @@
       <find>onCreateOpt</find>
       <find>intent</find>
       <find>onActi</find>
-      <find>onBack</find>
       <find>MAX_IMAGE_SIZE</find>
       <find>swiftnotes</find>
       <find>swift</find>
+      <find>onBackPRess</find>
+      <find>saveChanges</find>
+      <find>onActivity</find>
+      <find>onBack</find>
+      <find>savechanges</find>
+      <find>onActivityRes</find>
+      <find>email</find>
     </findStrings>
     <replaceStrings>
       <replace>FaceMain</replace>
@@ -4533,16 +4497,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_facedecrypt.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_person.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/decrypt_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/pin_unlock.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/PasswordUnlock.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/PasswordLock.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/base64.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/EditActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceDecrypt.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceMain.java" />
@@ -4559,6 +4520,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-ro/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values-sv/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/DataUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/EditActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -4594,23 +4558,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -4632,35 +4579,13 @@
             <path>
               <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="ciphernotes" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="ColorPicker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
               <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="dlib" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="dlib" type="feadf853:AndroidModuleNode" />
-              <item name="jniLibs" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
-              <item name="dlib" type="feadf853:AndroidModuleNode" />
-              <item name="jniLibs" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="armeabi-v7a" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="notesapp" type="1abcf292:AndroidViewProjectNode" />
@@ -4670,7 +4595,24 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4681,7 +4623,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../nicknotes-master" />
     <property name="device.picker.selection" value="57294581" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-mdpi" />
-    <property name="SearchEverywhereHistoryKey" value=".mk&#9;FILE&#9;file://D:/IIITV/SDP/notesapp/jni/jni_recognition/Android.mk&#10;application&#9;PSI&#9;JAVA://android.app.Application" />
+    <property name="SearchEverywhereHistoryKey" value="RESULT_FIRST&#9;PSI&#9;JAVA://android.app.Activity#RESULT_FIRST_USER&#10;.mk&#9;FILE&#9;file://D:/IIITV/SDP/notesapp/jni/jni_recognition/Android.mk&#10;application&#9;PSI&#9;JAVA://android.app.Application" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -4872,6 +4814,14 @@
       <option name="presentableId" value="Default" />
       <updated>1527507764470</updated>
     </task>
+    <task id="LOCAL-00001" summary="bugs fixed">
+      <created>1528178410200</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528178410200</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -4885,7 +4835,8 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3293718" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4906,7 +4857,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -4945,6 +4895,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="bugs fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugs fixed" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -4959,23 +4913,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_camera.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -4989,45 +4926,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="50" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="8" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pin_unlock.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/decrypt_menu.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pin_unlock.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/decrypt_menu.xml" />
     <entry file="file://$PROJECT_DIR$/dlib/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_edit.xml">
@@ -5048,22 +4957,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jni/jni_recognition/Android.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/Android.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/jni/jni_recognition/Android.mk" />
+    <entry file="file://$PROJECT_DIR$/jni/Android.mk" />
     <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -5096,35 +4991,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="42" column="50" lean-forward="false" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dlib/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2182">
-          <caret line="47" column="59" lean-forward="false" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/Application.mk">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/library/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/dlib/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/jni/Application.mk" />
     <entry file="file://$PROJECT_DIR$/dlib/src/main/java/com/tzutalin/dlib/FaceRec.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5236,7 +5109,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5244,7 +5116,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5252,7 +5123,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -5260,26 +5130,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/AddPerson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/base64.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/AddPerson.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/base64.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/DataUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -5288,32 +5143,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceDecrypt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="317" column="85" lean-forward="false" selection-start-line="317" selection-start-column="85" selection-end-line="317" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceMain.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FileUtils.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/NoteAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -5354,98 +5185,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/PasswordLock.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/PasswordLock.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="31" column="33" lean-forward="false" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        <state relative-caret-position="-205">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-27/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="123" column="62" lean-forward="false" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
+        <state relative-caret-position="255">
+          <caret line="66" column="43" lean-forward="true" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/FaceDecrypt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2145">
+          <caret line="225" column="0" lean-forward="false" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
           <folding>
-            <element signature="e#3795#3804#0" expanded="true" />
-            <element signature="e#8579#8983#0" expanded="true" />
-            <element signature="e#8982#8983#0" expanded="true" />
-            <element signature="e#9275#10622#0" expanded="true" />
-            <element signature="e#10621#10622#0" expanded="true" />
-            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
-            <element signature="docComment;method#initToolbar#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#11898#11915#0" expanded="true" />
-            <element signature="e#12706#12739#0" expanded="true" />
-            <element signature="class#12909:14120" expanded="false" />
-            <element signature="docComment;method#initDialogs#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#initDialogs#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#14760#14782#0" expanded="true" />
-            <element signature="e#14812#14848#0" expanded="true" />
-            <element signature="e#14885#14904#0" expanded="true" />
-            <element signature="e#14906#16198#0" expanded="true" />
-            <element signature="e#15525#15579#0" expanded="true" />
-            <element signature="e#15976#16032#0" expanded="true" />
-            <element signature="e#16197#16198#0" expanded="true" />
-            <element signature="e#16235#16253#0" expanded="true" />
-            <element signature="e#16255#16483#0" expanded="true" />
-            <element signature="e#16482#16483#0" expanded="true" />
-            <element signature="e#16673#16709#0" expanded="true" />
-            <element signature="e#16739#16780#0" expanded="true" />
-            <element signature="e#16898#17126#0" expanded="true" />
-            <element signature="e#17125#17126#0" expanded="true" />
-            <element signature="e#17522#17545#0" expanded="true" />
-            <element signature="e#17575#17612#0" expanded="true" />
-            <element signature="e#17649#17668#0" expanded="true" />
-            <element signature="e#17670#19729#0" expanded="true" />
-            <element signature="e#18497#18556#0" expanded="true" />
-            <element signature="e#19293#19354#0" expanded="true" />
-            <element signature="e#19728#19729#0" expanded="true" />
-            <element signature="e#19766#19784#0" expanded="true" />
-            <element signature="e#19786#20014#0" expanded="true" />
-            <element signature="e#20013#20014#0" expanded="true" />
-            <element signature="e#20204#20240#0" expanded="true" />
-            <element signature="e#20270#20300#0" expanded="true" />
-            <element signature="e#20357#20585#0" expanded="true" />
-            <element signature="e#20584#20585#0" expanded="true" />
-            <element signature="method#showBackupSuccessfulDialog#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#showRestoreFailedDialog#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#24844#24870#0" expanded="true" />
-            <element signature="e#24904#24932#0" expanded="true" />
-            <element signature="e#24973#24992#0" expanded="true" />
-            <element signature="e#24994#25763#0" expanded="true" />
-            <element signature="e#25762#25763#0" expanded="true" />
-            <element signature="e#25804#25822#0" expanded="true" />
-            <element signature="e#25824#26072#0" expanded="true" />
-            <element signature="e#26071#26072#0" expanded="true" />
-            <element signature="docComment;method#onItemCheckedStateChanged#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onItemCheckedStateChanged#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#27261#27310#0" expanded="true" />
-            <element signature="method#onActionItemClicked#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#27806#27828#0" expanded="true" />
-            <element signature="e#27890#29753#0" expanded="true" />
-            <element signature="e#28842#28890#0" expanded="true" />
-            <element signature="e#29124#29328#0" expanded="true" />
-            <element signature="e#29327#29328#0" expanded="true" />
-            <element signature="e#29752#29753#0" expanded="true" />
-            <element signature="e#29819#30067#0" expanded="true" />
-            <element signature="e#30066#30067#0" expanded="true" />
-            <element signature="method#onCreateActionMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#onDestroyActionMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#38536#38585#0" expanded="true" />
-            <element signature="e#40709#40760#0" expanded="true" />
-            <element signature="e#41627#41688#0" expanded="true" />
-            <element signature="e#43970#44142#0" expanded="true" />
-            <element signature="e#44141#44142#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/EditActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="428" column="37" lean-forward="false" selection-start-line="428" selection-start-column="37" selection-end-line="428" selection-end-column="37" />
+          <folding>
+            <element signature="e#4250#4816#0" expanded="true" />
+            <element signature="e#4815#4816#0" expanded="true" />
+            <element signature="e#5557#5582#0" expanded="true" />
+            <element signature="e#6230#6553#0" expanded="true" />
+            <element signature="e#6552#6553#0" expanded="true" />
+            <element signature="e#6592#8608#0" expanded="true" />
+            <element signature="e#7076#7966#0" expanded="true" />
+            <element signature="e#7965#7966#0" expanded="true" />
+            <element signature="e#8607#8608#0" expanded="true" />
+            <element signature="e#9745#9894#0" expanded="true" />
+            <element signature="e#9893#9894#0" expanded="true" />
+            <element signature="e#10628#10655#0" expanded="true" />
+            <element signature="e#10925#11550#0" expanded="true" />
+            <element signature="e#11549#11550#0" expanded="true" />
+            <element signature="e#11670#11695#0" expanded="true" />
+            <element signature="e#11740#12124#0" expanded="true" />
+            <element signature="e#12123#12124#0" expanded="true" />
+            <element signature="e#12185#12413#0" expanded="true" />
+            <element signature="e#12412#12413#0" expanded="true" />
+            <element signature="e#12567#12595#0" expanded="true" />
+            <element signature="e#12632#12651#0" expanded="true" />
+            <element signature="e#12653#13195#0" expanded="true" />
+            <element signature="e#13194#13195#0" expanded="true" />
+            <element signature="e#13232#13250#0" expanded="true" />
+            <element signature="e#13252#14116#0" expanded="true" />
+            <element signature="e#14115#14116#0" expanded="true" />
+            <element signature="e#15570#15595#0" expanded="true" />
+            <element signature="e#15743#15800#0" expanded="true" />
+            <element signature="e#16085#16110#0" expanded="true" />
+            <element signature="e#16257#16315#0" expanded="true" />
+            <element signature="e#19260#19325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/rajabhargava/android/ciphernotes/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <element signature="e#3771#3780#0" expanded="true" />
+            <element signature="e#8555#8959#0" expanded="true" />
+            <element signature="e#8958#8959#0" expanded="true" />
+            <element signature="e#9251#10598#0" expanded="true" />
+            <element signature="e#10597#10598#0" expanded="true" />
+            <element signature="e#11896#11913#0" expanded="true" />
+            <element signature="e#12704#12737#0" expanded="true" />
+            <element signature="e#14758#14780#0" expanded="true" />
+            <element signature="e#14810#14846#0" expanded="true" />
+            <element signature="e#14883#14902#0" expanded="true" />
+            <element signature="e#14904#16196#0" expanded="true" />
+            <element signature="e#15523#15577#0" expanded="true" />
+            <element signature="e#15974#16030#0" expanded="true" />
+            <element signature="e#16195#16196#0" expanded="true" />
+            <element signature="e#16233#16251#0" expanded="true" />
+            <element signature="e#16253#16481#0" expanded="true" />
+            <element signature="e#16480#16481#0" expanded="true" />
+            <element signature="e#16671#16707#0" expanded="true" />
+            <element signature="e#16737#16778#0" expanded="true" />
+            <element signature="e#16896#17124#0" expanded="true" />
+            <element signature="e#17123#17124#0" expanded="true" />
+            <element signature="e#17520#17543#0" expanded="true" />
+            <element signature="e#17573#17610#0" expanded="true" />
+            <element signature="e#17647#17666#0" expanded="true" />
+            <element signature="e#17668#19727#0" expanded="true" />
+            <element signature="e#18495#18554#0" expanded="true" />
+            <element signature="e#19291#19352#0" expanded="true" />
+            <element signature="e#19726#19727#0" expanded="true" />
+            <element signature="e#19764#19782#0" expanded="true" />
+            <element signature="e#19784#20012#0" expanded="true" />
+            <element signature="e#20011#20012#0" expanded="true" />
+            <element signature="e#20202#20238#0" expanded="true" />
+            <element signature="e#20268#20298#0" expanded="true" />
+            <element signature="e#20355#20583#0" expanded="true" />
+            <element signature="e#20582#20583#0" expanded="true" />
+            <element signature="e#24842#24868#0" expanded="true" />
+            <element signature="e#24902#24930#0" expanded="true" />
+            <element signature="e#24971#24990#0" expanded="true" />
+            <element signature="e#24992#25761#0" expanded="true" />
+            <element signature="e#25760#25761#0" expanded="true" />
+            <element signature="e#25802#25820#0" expanded="true" />
+            <element signature="e#25822#26070#0" expanded="true" />
+            <element signature="e#26069#26070#0" expanded="true" />
+            <element signature="e#27259#27308#0" expanded="true" />
+            <element signature="e#27804#27826#0" expanded="true" />
+            <element signature="e#27888#29751#0" expanded="true" />
+            <element signature="e#28840#28888#0" expanded="true" />
+            <element signature="e#29122#29326#0" expanded="true" />
+            <element signature="e#29325#29326#0" expanded="true" />
+            <element signature="e#29750#29751#0" expanded="true" />
+            <element signature="e#29817#30065#0" expanded="true" />
+            <element signature="e#30064#30065#0" expanded="true" />
+            <element signature="e#38535#38584#0" expanded="true" />
+            <element signature="e#40708#40759#0" expanded="true" />
+            <element signature="e#41739#41800#0" expanded="true" />
+            <element signature="e#44082#44254#0" expanded="true" />
+            <element signature="e#44253#44254#0" expanded="true" />
+            <element signature="e#46405#46406#0" expanded="true" />
+            <element signature="e#46437#46438#0" expanded="true" />
+            <element signature="e#46529#46530#0" expanded="true" />
+            <element signature="e#46562#46563#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -468,6 +468,7 @@ public class EditActivity extends AppCompatActivity implements Toolbar.OnMenuIte
                     fontSize != bundle.getInt(NOTE_FONT_SIZE) ||
                     hideBody != bundle.getBoolean(NOTE_HIDE_BODY)) {
 
+
                     saveChanges();
                 }
 
